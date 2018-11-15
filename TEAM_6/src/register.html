@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Decentralized food delivery</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+<script>
+     
+</script>
+</head>
+<body>
+    <div id = "register">
+            <h1>Register here</h1>
+            <input type="radio" id = "customerinp" name="usertype" value="Customer">Customer<br>
+            <input type="radio" id = "restaurantinp" name="usertype" value="Restaurant">Restaurant<br>
+            <input type="radio" id = "courierinp" name="usertype" value="Courier">Courier<br>
+            <button onclick="App.myFunction();" type="button">Register</button>
+    </div>
+    <div id = "customer_home">
+            <h1>Customer homepage</h1>
+            <br><br>
+            <p>Restaurants:</p>
+            <input list="restaurants" name="restaurant" multiple>
+            <datalist id = "restaurants">
+                <option value="1">A</option>
+            </datalist>
+            <p>Select the items to be ordered:</p>
+            <input list="items" name="item" multiple>
+            <datalist id = "items">
+                <option value="1">Item 1</option>
+            </datalist>
+            <br><br><br><br>    
+            <button onclick="App.placeorder();" type="button">Place Order</button>
+            <br><br><br><br>
+            <button onclick = "App.foodreceived();" type="button">Food received</button>
+            <br><br><br><br>
+            <button type="button">Withdraw money</button>
+            <br><br><br><br>
+            <p>Rate courier</p>
+            <label class="radio-inline">
+                <input type="radio" id = "5" name="rate_courier" value="5">5*<br>
+            </label>
+            <label class="radio-inline">
+                <input type="radio" id = "4" name="rate_courier" value="4">4*<br>
+            </label>
+            <label class="radio-inline">
+                <input type="radio" id = "3" name="rate_courier" value="3">3*<br>
+            </label>
+            <label class="radio-inline">
+                <input type="radio" id = "2" name="rate_courier" value="2">2*<br>
+            </label>
+            <label class="radio-inline">
+                <input type="radio" id = "1" name="rate_courier" value="1">1*<br>
+            </label>
+            <br><br>
+            <button onclick = "App.ratecourier();" type="button"> Submit Rating for Courier</button>
+            <br><br><br><br>
+            <p>Rate food</p>
+            <label class="radio-inline">
+                <input type="radio" id = "A" name="rate_food" value="5">5*<br>
+            </label>
+            <label class="radio-inline">
+                <input type="radio" id = "B" name="rate_food" value="4">4*<br>
+            </label>
+            <label class="radio-inline">
+                <input type="radio" id = "C" name="rate_food" value="3">3*<br>
+            </label>
+            <label class="radio-inline">
+                <input type="radio" id = "D" name="rate_food" value="2">2*<br>
+            </label>
+            <label class="radio-inline">
+                <input type="radio" id = "E" name="rate_food" value="1">1*<br>
+            </label>
+            <br><br>
+            <button onclick = "App.ratefood();" type="button">Submit Rating for Food</button>   
+    </div>
+    <div id = "courier_home">
+            <h1>Courier homepage</h1>
+            <br><br><br><br>    
+            <button onclick = "App.acceptdel();" type="button">Accept delivery</button>
+            <br><br><br><br>
+            <button onclick = "App.collectfromrest();" type="button">Food Collected</button>
+            <br><br><br><br>      
+            <button onclick = "App.delivertocust();" type="button">Food Delivered</button>
+            <br><br><br><br>    
+            <button onclick = "App.collectMoneyCour();" type="button">Collect delivery fee</button>
+    </div>
+    <div id = "restaurant_home">
+            <h1>Restaurant homepage</h1>
+            <br><br><br><br>    
+            <button onclick = "App.acceptorder();" type="button">Accept Order</button>
+            <br><br><br><br>    
+            <button onclick = "App.makefood();" type="button">Food Prepared</button>
+            <br><br><br><br>    
+            <button onclick = "App.collectMoneyRest();" type="button">Collect money</button>
+    </div>
+</body>
+<!--<script>
+    document.getElementById('customer_home').style.display = 'none';
+    document.getElementById('courier_home').style.display = 'none';
+    document.getElementById('restaurant_home').style.display = 'none';
+    function myFunction() {
+        if (document.getElementById('customerinp').checked){
+            document.getElementById('register').style.display = 'none';
+            document.getElementById('courier_home').style.display = 'none';
+            document.getElementById('restaurant_home').style.display = 'none';
+            document.getElementById('customer_home').style.display = 'block';
+            console.log("D")
+        }
+        if (document.getElementById('restaurantinp').checked){
+            document.getElementById('register').style.display = 'none';
+            document.getElementById('courier_home').style.display = 'none';
+            document.getElementById('restaurant_home').style.display = 'block';
+            document.getElementById('customer_home').style.display = 'none';
+            console.log("D")
+        }
+        if (document.getElementById('courierinp').checked){
+            document.getElementById('register').style.display = 'none';
+            document.getElementById('courier_home').style.display = 'block';
+            document.getElementById('restaurant_home').style.display = 'none';
+            document.getElementById('customer_home').style.display = 'none';
+            console.log("D")
+        }
+}
+</script>-->
+</html>
